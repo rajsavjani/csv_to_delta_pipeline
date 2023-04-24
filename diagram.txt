@@ -1,0 +1,14 @@
+                                      +--------------+                                   +-------------+
+                                      |     MWAA     |<--- read DAG & read Spark job --->|  S3 bucket  |
+                                      +--------------+                                   +-------------+
+                                              |
+                                              |
+                                              |
+                                  submit Spark job to cluster
+                                              |
+                                              |
+                                              |
+                                              v
++-------------+                        +-------------+                          +-------------+
+|  S3 bucket  |<--- Spark read CSV --->| EMR cluster |--- Spark Delta write --->| Delta table |
++-------------+                        +-------------+                          +-------------+
