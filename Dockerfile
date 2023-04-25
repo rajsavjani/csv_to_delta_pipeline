@@ -6,6 +6,8 @@ RUN apt-get update && \
 
 RUN pip3 install pyspark==3.3.0
 
+RUN pip3 install pytest==7.3.1
+
 COPY spark_job.py /app/spark_job.py
 
 COPY dummy_data.csv /app/dummy_data.csv
